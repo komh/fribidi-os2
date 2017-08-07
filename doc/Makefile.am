@@ -15,7 +15,7 @@ noinst_symbols =
 include $(top_srcdir)/charset/Headers.mk
 headers += $(libfribidi_char_sets_la_headers)
 includepath += -I$(top_srcdir)/charset
-includevpath += :$(top_srcdir)/charset
+includevpath += $(PATH_SEPARATOR)$(top_srcdir)/charset
 if FRIBIDI_CHARSETS
 inst_symbols += $(libfribidi_char_sets_la_symbols)
 else # !FRIBIDI_CHARSETS
@@ -26,7 +26,7 @@ endif # !FRIBIDI_CHARSETS
 include $(top_srcdir)/lib/Headers.mk
 headers += $(libfribidi_la_headers)
 includepath += -I$(top_builddir)/lib -I$(top_srcdir)/lib
-includevpath += :$(top_builddir)/lib:$(top_srcdir)/lib
+includevpath += $(PATH_SEPARATOR)$(top_builddir)/lib$(PATH_SEPARATOR)$(top_srcdir)/lib
 inst_symbols += $(libfribidi_la_symbols)
 
 dist_man_MANS += $(inst_symbols:=.3)
