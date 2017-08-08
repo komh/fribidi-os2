@@ -301,8 +301,8 @@ MAINTAINERCLEANFILES = $(man3) c2man.stamp
 # man3
 includepath = -I$(top_srcdir)/charset -I$(top_builddir)/lib \
 	-I$(top_srcdir)/lib
-includevpath = :$(top_srcdir)/charset \
-	:$(top_builddir)/lib:$(top_srcdir)/lib
+includevpath = $(PATH_SEPARATOR)$(top_srcdir)/charset \
+	$(PATH_SEPARATOR)$(top_builddir)/lib$(PATH_SEPARATOR)$(top_srcdir)/lib
 
 # The lib/Headers.mk stuff should come after all optional stuff.
 headers = $(libfribidi_char_sets_la_headers) $(libfribidi_la_headers)
