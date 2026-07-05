@@ -97,7 +97,7 @@
 #define FRIBIDI_END_IGNORE_DEPRECATIONS
 #endif
 
-#if (defined(__GNUC__) && (__GNUC__ > 2)) && ! defined(_WIN32)
+#if (defined(__GNUC__) && (__GNUC__ > 2)) && ! defined(_WIN32) && ! defined(__OS2__)
 # define FRIBIDI_GNUC_WARN_UNUSED __attribute__((__warn_unused_result__))
 # define FRIBIDI_GNUC_MALLOC      __attribute__((__malloc__))
 # define FRIBIDI_GNUC_HIDDEN      __attribute__((__visibility__ ("hidden")))
