@@ -25,10 +25,10 @@ if cc.get_id() == 'gcc' and cc.has_argument('-ansi')
   add_project_arguments('-ansi', language: 'c')
 endif
 
-# Handle symbol visibility for Windows
+# Handle symbol visibility for Windows and OS/2
 fribidi_static_cargs = []
 fribidi_build_cargs = []
-if host_machine.system() == 'windows'
+if host_machine.system() in ['windows', 'os/2']
   fribidi_build_cargs = ['-DFRIBIDI_BUILD']
   if get_option('default_library') == 'static'
     fribidi_static_cargs = ['-DFRIBIDI_LIB_STATIC']
